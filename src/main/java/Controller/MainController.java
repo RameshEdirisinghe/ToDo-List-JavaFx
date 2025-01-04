@@ -2,8 +2,8 @@ package Controller;
 
 import DBConnection.DBConnection;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
+import java.sql.*;
 
 public class MainController {
     public static MainController instance;

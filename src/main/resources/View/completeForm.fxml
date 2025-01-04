@@ -1,14 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
 
+<AnchorPane prefHeight="707.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.completeFormController">
+   <children>
+      <Circle fill="#ffa083fa" layoutX="455.0" layoutY="-165.0" radius="321.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#e57753d8" layoutX="455.0" layoutY="-182.0" radius="321.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <ImageView fitHeight="92.0" fitWidth="92.0" layoutX="323.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/user_img.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="421.0" layoutY="31.0" prefHeight="72.0" prefWidth="173.0" text="Hello Ramesh!!" textFill="WHITE">
+         <font>
+            <Font name="Nirmala UI Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="30.0" layoutY="381.0" mnemonicParsing="false" onAction="#btnLogOutClickAction" prefHeight="30.0" prefWidth="174.0" style="-fx-background-color: #ff6f61;" text="Log Out" textFill="WHITE">
+         <font>
+            <Font name="Nirmala UI Bold" size="14.0" />
+         </font>
+      </Button>
+      <JFXListView fx:id="completedLisView" layoutX="236.0" layoutY="202.0" prefHeight="462.0" prefWidth="592.0" stylesheets="@../css/sryle.css" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#85ff99" height="30.0" layoutX="236.0" layoutY="172.0" stroke="#85ff99" strokeType="INSIDE" strokeWidth="0.0" width="592.0" />
+      <Button layoutX="30.0" layoutY="421.0" mnemonicParsing="false" onAction="#btnCloseOnClickAction" prefHeight="30.0" prefWidth="174.0" style="-fx-background-color: #7d7d7d;" text="Close" textFill="WHITE">
+         <font>
+            <Font name="Nirmala UI Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="508.0" layoutY="177.0" prefHeight="20.0" prefWidth="125.0" text="Completed Tasks">
+         <font>
+            <Font name="Nirmala UI Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="30.0" layoutY="342.0" mnemonicParsing="false" onAction="#btnReloadOnClickAction" prefHeight="30.0" prefWidth="174.0" style="-fx-background-color: #ffa083;" text="Reload" textFill="WHITE">
+         <font>
+            <Font name="Nirmala UI Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

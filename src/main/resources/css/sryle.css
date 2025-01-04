@@ -1,0 +1,128 @@
+/* CSS for JavaFX Task Form Application */
+
+/* AnchorPane styling */
+.anchor-pane {
+    -fx-background-color: #ffffff;
+}
+
+/* Circle styling for decorative elements */
+.circle-orange {
+    -fx-fill: #ffa083fa;
+    -fx-stroke: black;
+    -fx-stroke-width: 0;
+}
+
+.circle-red {
+    -fx-fill: #e57753d8;
+    -fx-stroke: black;
+    -fx-stroke-width: 0;
+}
+
+/* ImageView for profile picture */
+.image-view {
+    -fx-fit-width: 92px;
+    -fx-fit-height: 92px;
+}
+
+/* Label for greeting text */
+.label-greeting {
+    -fx-font-family: "Nirmala UI Bold";
+    -fx-font-size: 24px;
+    -fx-text-fill: white;
+}
+
+.label-task-count {
+    -fx-font-family: "Nirmala UI Bold";
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+}
+
+/* TextField for task name input */
+.text-field {
+    -fx-font-size: 16px;
+    -fx-padding: 8px;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 4px;
+    -fx-background-color: #ffffff;
+    -fx-prompt-text-fill: #aaa;
+}
+
+/* DatePicker for selecting due date */
+.date-picker {
+    -fx-font-size: 14px;
+    -fx-padding: 8px;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 4px;
+    -fx-background-color: #ffffff;
+    -fx-prompt-text-fill: #aaa;
+}
+
+/* Buttons for actions */
+.button-add-task {
+    -fx-font-family: "Nirmala UI Bold";
+    -fx-font-size: 14px;
+    -fx-background-color: #ffa083;
+    -fx-text-fill: white;
+    -fx-border-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.button-complete-task {
+    -fx-font-family: "Nirmala UI Bold";
+    -fx-font-size: 14px;
+    -fx-background-color: #85ff99;
+    -fx-text-fill: white;
+    -fx-border-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #0078d7;
+}
+
+/* JFXListView for task lists */
+.jfx-list-view {
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+    -fx-border-width: 0;
+    -fx-background-color: #f4f4f4;
+}
+
+/* Styling for HBox within list view (as card) */
+.hbox-task {
+    -fx-spacing: 15px;
+    -fx-padding: 15px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e57753d8;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0.5, 0, 4);
+}
+
+/* Labels inside HBox */
+.label-task {
+    -fx-font-family: "Nirmala UI";
+    -fx-font-size: 14px;
+    -fx-text-fill: #000;
+}
+
+.label-date {
+    -fx-font-family: "Nirmala UI";
+    -fx-font-size: 12px;
+    -fx-text-fill: #181818;
+    -fx-font-style: italic;
+}
+
+/* Checkbox inside HBox */
+.checkbox-complete {
+    -fx-font-size: 14px;
+    -fx-text-fill: #000;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* VBox selection color */
+.vbox-task:selected {
+    -fx-background-color: #ffa083fa;
+}
