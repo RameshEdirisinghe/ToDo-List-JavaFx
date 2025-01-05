@@ -16,7 +16,7 @@ public class MainController {
         return instance==null?instance=new MainController():instance;
     }
 
-    public boolean login(String userName,String Password){
+    public int login(String userName,String Password){
         try {
             ResultSet rst = DBConnection.getInstance().getConnection().createStatement().executeQuery("Select * from Users");
 
@@ -24,12 +24,12 @@ public class MainController {
                 if (rst.getString(2).equals(userName)){
                     ResultSet rst1 = DBConnection.getInstance().getConnection().createStatement().executeQuery("Select * from Users where Username='"+userName+"'");
                     if(rst.getString(4).equals(Password)){
-                        return true;
+                        return rst.getInt(1);
                     }
                 }
 
             }
-            return false;
+            return -1;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

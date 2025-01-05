@@ -10,17 +10,16 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="707.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.completeFormController">
    <children>
       <Circle fill="#ffa083fa" layoutX="455.0" layoutY="-165.0" radius="321.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
       <Circle fill="#e57753d8" layoutX="455.0" layoutY="-182.0" radius="321.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <ImageView fitHeight="92.0" fitWidth="92.0" layoutX="323.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="userImg" fitHeight="92.0" fitWidth="92.0" layoutX="323.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/user_img.png" />
          </image>
       </ImageView>
-      <Label layoutX="421.0" layoutY="31.0" prefHeight="72.0" prefWidth="173.0" text="Hello Ramesh!!" textFill="WHITE">
+      <Label fx:id="greatingLbl" layoutX="421.0" layoutY="31.0" prefHeight="72.0" prefWidth="173.0" text="Hello Ramesh!!" textFill="WHITE">
          <font>
             <Font name="Nirmala UI Bold" size="24.0" />
          </font>
@@ -37,7 +36,7 @@
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
       </Button>
-      <Label layoutX="508.0" layoutY="177.0" prefHeight="20.0" prefWidth="125.0" text="Completed Tasks">
+      <Label layoutX="484.0" layoutY="177.0" prefHeight="20.0" prefWidth="125.0" text="Completed Tasks">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>

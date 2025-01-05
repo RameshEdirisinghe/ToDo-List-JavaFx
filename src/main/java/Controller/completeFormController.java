@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import model.task;
 
@@ -15,8 +17,11 @@ import java.util.ResourceBundle;
 
 public class completeFormController implements Initializable {
 
+    public Label greatingLbl;
+    public ImageView userImg;
     @FXML
     private JFXListView completedLisView;
+    public static int userId;
 
     @FXML
     void btnCloseOnClickAction(ActionEvent event) {
@@ -28,13 +33,31 @@ public class completeFormController implements Initializable {
 
     }
 
+    public void setGreeting(){
+        String username = taskController.getInstance().getUserName(userId);
+        greatingLbl.setText("Hello "+username+" !");
+        if (username.equals("shalani")){
+            Image newImage = new Image("img/fUser.png"); // Provide valid image path
+            userImg.setImage(newImage);
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        List<task> comTaskList = completeController.getInstance().getAllComTasks();
+        setGreeting();
+        loadTable();
+
+    }
+
+    public void loadTable(){
+        List<task> comTaskList = completeController.getInstance().getAllComTasks(userId);
 
         for(task tsk:comTaskList){
             addToVBox(tsk.getTaskName(),tsk.getDate());
         }
+    }
+    public static void setUserId(int usrId){
+        userId = usrId;
     }
 
     public void addToVBox(String taskName, String date) {
@@ -47,7 +70,7 @@ public class completeFormController implements Initializable {
         Label tsName = new Label("Task: "+taskName);
         tsName.getStyleClass().add("label-task");
 
-        CheckBox Pending = new CheckBox("Pending ?");
+        CheckBox Pending = new CheckBox("Delete ?");
         Pending.getStyleClass().add("checkbox-complete");
 
         Label lbldate = new Label("Completed Date:  "+date.toString());
@@ -56,6 +79,7 @@ public class completeFormController implements Initializable {
         Pending.setOnAction(actionEvent -> {
             if (Pending.isSelected()){
                 completedLisView.getItems().remove(hbox);
+                remove(taskName);
             }
         });
 
@@ -64,6 +88,13 @@ public class completeFormController implements Initializable {
 
     }
 
+    public void remove(String tskName){
+        completeController.getInstance().remove(tskName);
+
+
+    }
+
     public void btnReloadOnClickAction(ActionEvent actionEvent) {
+        loadTable();
     }
 }

@@ -16,17 +16,17 @@
    <children>
       <Circle fill="#ffa083fa" layoutX="413.0" layoutY="-185.0" radius="321.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
       <Circle fill="#e57753d8" layoutX="413.0" layoutY="-202.0" radius="321.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <ImageView fitHeight="92.0" fitWidth="92.0" layoutX="281.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="userImg" fitHeight="92.0" fitWidth="92.0" layoutX="281.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/user_img.png" />
          </image>
       </ImageView>
-      <Label layoutX="379.0" layoutY="11.0" prefHeight="72.0" prefWidth="173.0" text="Hello Ramesh!!" textFill="WHITE">
+      <Label fx:id="greetinLbl" layoutX="379.0" layoutY="11.0" prefHeight="72.0" prefWidth="173.0" text="Hello Ramesh!!" textFill="WHITE">
          <font>
             <Font name="Nirmala UI Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="379.0" layoutY="65.0" text="Today you have 25 tasks" textFill="WHITE">
+      <Label fx:id="taskCountLbl" layoutX="379.0" layoutY="65.0" text="Today you have 25 tasks" textFill="WHITE">
          <font>
             <Font name="Nirmala UI Bold" size="12.0" />
          </font>

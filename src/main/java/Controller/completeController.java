@@ -3,6 +3,7 @@ package Controller;
 import DBConnection.DBConnection;
 import model.task;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -18,11 +19,11 @@ public class completeController {
         return instance==null?instance=new completeController():instance;
     }
 
-    public List<task> getAllComTasks(){
+    public List<task> getAllComTasks(int usrId){
         List<task> taskList = null;
         try {
             taskList = new ArrayList<>();
-            ResultSet rst = DBConnection.getInstance().getConnection().createStatement().executeQuery("Select * from completedtasks");
+            ResultSet rst = DBConnection.getInstance().getConnection().createStatement().executeQuery("Select * from completedtasks where UserID='"+usrId+"'");
 
             while (rst.next()){
                 taskList.add(new task(rst.getInt(1),rst.getInt(2),rst.getString(3), rst.getString(4)));
@@ -35,4 +36,16 @@ public class completeController {
         return taskList;
 
     }
+
+    public boolean remove(String taskName){
+        try {
+            PreparedStatement stm = DBConnection.getInstance().getConnection().prepareStatement("DELETE FROM completedtasks WHERE TaskName = '"+taskName+"'");
+            return stm.executeUpdate()>0;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
 }

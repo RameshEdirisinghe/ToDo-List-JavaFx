@@ -15,17 +15,19 @@ public class MainGuiController {
 
     public void btnOnActionLogin(ActionEvent actionEvent) {
         System.out.println("awa");
-            if(MainController.getInstance().login(txtUserName.getText(),txtPassword.getText())){
+            int usrId = MainController.getInstance().login(txtUserName.getText(),txtPassword.getText());
+            if(usrId!=-1){
                 System.out.println("awa");
-                newForm();
+                newForm(usrId);
             }else{
                 new Alert(Alert.AlertType.INFORMATION,"Invalid user Name or Password").show();
             }
     }
 
-    public void newForm(){
+    public void newForm(int usrId){
         Stage st = new Stage();
         try {
+            tskFormController.setUserId(usrId);
             st.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/tskForm.fxml"))));
             st.show();
         } catch (IOException e) {

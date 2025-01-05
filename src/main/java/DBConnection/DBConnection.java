@@ -18,7 +18,11 @@ public class DBConnection {
     }
 
     public static DBConnection getInstance(){
-        return instance == null ? instance = new DBConnection(): instance;
+        if(instance==null){
+            return instance=new DBConnection();
+        }else{
+            return instance;
+        }
 
     }
 }
