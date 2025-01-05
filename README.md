@@ -43,9 +43,13 @@ private static final String PASSWORD = "your_password";
 - **Data Persistence**: All tasks are stored securely in the database.
 
 ## Screenshots
-![Login Screen](screenshots/login_screen.png)
-![Main To-Do List](screenshots/todo_list_screen.png)
-![Task Editing](screenshots/edit_task_screen.png)
+![Login Screen](https://github.com/RameshEdirisinghe/ToDo-List-JavaFx/blob/0de3eee60a1abc394577da82a419b10f51c56b21/login.png)
+<br>
+<br>
+![Main To-Do List](https://github.com/RameshEdirisinghe/ToDo-List-JavaFx/blob/0de3eee60a1abc394577da82a419b10f51c56b21/tasks.png)
+<br>
+<br>
+![Task Editing](https://github.com/RameshEdirisinghe/ToDo-List-JavaFx/blob/0de3eee60a1abc394577da82a419b10f51c56b21/completeTasks.png)
 
 ## Contributing
 Contributions are welcome! Please fork this repository and submit a pull request.
